@@ -1,4 +1,5 @@
 ﻿using BattleBitAPI.Common;
+using BattleBitApi.Data;
 using BattleBitApi.Events;
 using BattleBitApi.Helpers;
 using BattleBitAPI.Server;
@@ -20,6 +21,7 @@ public class BattleBitServer : GameServer<BattleBitPlayer>
         AddEvent(new ChatCommandListener(), this);
         AddEvent(new RoundState(), this);
         AddEvent(new PlayerWearings(), this);
+        AddEvent(new ExclusionZoneHandler(), this);
     }
 
     private void AddEvent(Event @event, BattleBitServer server)

@@ -1,4 +1,5 @@
 ﻿using BattleBitAPI;
+using BattleBitApi.Data;
 using BattleBitApi.Enums;
 
 namespace BattleBitApi.Api;
@@ -9,6 +10,8 @@ public class BattleBitPlayer : Player<BattleBitPlayer>
     public PlayerRoles[] PlayerRoles = {
         Enums.PlayerRoles.Default
     };
+    
+    public PlayerTeamRoles PlayerTeamRole = PlayerTeamRoles.Human;
 
     public bool AddPlayerRole(PlayerRoles playerRole)
     {

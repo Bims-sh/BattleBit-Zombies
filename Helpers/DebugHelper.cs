@@ -17,6 +17,8 @@ public class DebugHelper
                 message.AppendLine($"Highest Player Role: {player.GetHighestRole()}");
                 message.AppendLine($"Position: {player.Position}");
                 message.AppendLine($"Health: {player.HP}");
+                message.AppendLine($"PlayerTeamRole: {player.PlayerTeamRole}");
+                message.AppendLine($"Map: {server.Map}");
                 message.AppendLine($"PlayerCount: {server.AllPlayers.Count()}");
 
                 player.Message(message.ToString());

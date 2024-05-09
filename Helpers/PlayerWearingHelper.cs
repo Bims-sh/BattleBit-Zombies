@@ -1,4 +1,5 @@
 ﻿using BattleBitAPI.Common;
+using BattleBitApi.Data;
 
 namespace BattleBitApi.Helpers;
 
@@ -21,12 +22,11 @@ public class PlayerWearingHelper
         { "ZombieBelt", new[] { "ANV2_Universal_All_Belt_Null" } }
     };
     
-    public static PlayerWearings GetUpdatedWearings(Team playerTeam, PlayerWearings currentWearings)
+    public static PlayerWearings GetUpdatedWearings(PlayerTeamRoles playerTeamRole, PlayerWearings currentWearings)
     {
         var updatedWearings = currentWearings;
-        var playerRole = playerTeam == Team.TeamA ? "Human" : "Zombie";
 
-        if (playerRole == "Human")
+        if (playerTeamRole == PlayerTeamRoles.Human)
         {
             updatedWearings.Uniform = WearingDictionary["HumanUniform"][new Random().Next(0, WearingDictionary["HumanUniform"].Length)];
             updatedWearings.Head = WearingDictionary["HumanHead"][new Random().Next(0, WearingDictionary["HumanHead"].Length)];
