@@ -1,8 +1,10 @@
 ﻿using BattleBitAPI.Common;
 using BattleBitApi.Events;
+using BattleBitApi.Helpers;
 using BattleBitAPI.Server;
 using PlayerRoles = BattleBitApi.Events.PlayerRoles;
 using PlayerStats = BattleBitAPI.Common.PlayerStats;
+using PlayerWearings = BattleBitApi.Events.PlayerWearings;
 using ServerSettings = BattleBitApi.Events.ServerSettings;
 
 namespace BattleBitApi.Api;
@@ -16,6 +18,8 @@ public class BattleBitServer : GameServer<BattleBitPlayer>
         AddEvent(new ServerSettings(), this);
         AddEvent(new PlayerRoles(), this);
         AddEvent(new ChatCommandListener(), this);
+        AddEvent(new RoundState(), this);
+        AddEvent(new PlayerWearings(), this);
     }
 
     private void AddEvent(Event @event, BattleBitServer server)
