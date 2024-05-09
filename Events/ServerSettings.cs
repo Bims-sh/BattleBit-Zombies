@@ -40,8 +40,6 @@ public class ServerSettings : Event
         Server.SetServerSizeForNextMatch(MapSize._127vs127);
         
         // TODO: REMEMBER TO CHANGE TO ONLY NIGHT FOR PROD
-        Server.ServerSettings.CanVoteDay = true;
-        Server.ServerSettings.CanVoteNight = false;
         Server.ServerSettings.HideMapVotes = false;
         Server.ServerSettings.HelicopterSpawnDelayMultipler = float.MaxValue;
         Server.ServerSettings.TankSpawnDelayMultipler = float.MaxValue;

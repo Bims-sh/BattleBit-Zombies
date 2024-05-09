@@ -4,7 +4,7 @@ namespace BattleBitApi.Data.ExclusionZones;
 
 public static class LonovoExclusionZone
 {
-    public static List<Vector2> HumanSpawnCorners = new List<Vector2>
+    public static readonly List<Vector2> HumanSpawnCorners = new()
     {
         new Vector2(-475, -242),
         new Vector2(-130f, -204),

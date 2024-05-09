@@ -11,6 +11,7 @@ public class PlayerWearingHelper
         { "HumanHead", new[] { "ANV2_Survivor_All_Helmet_00_A_Z", "ANV2_Survivor_All_Helmet_00_B_Z", "ANV2_Survivor_All_Helmet_01_A_Z", "ANV2_Survivor_All_Helmet_02_A_Z", "ANV2_Survivor_All_Helmet_03_A_Z", "ANV2_Survivor_All_Helmet_04_A_Z", "ANV2_Survivor_All_Helmet_05_A_Z", "ANV2_Survivor_All_Helmet_05_B_Z" } },
         { "HumanBackpack", new[] { "ANV2_Survivor_All_Backpack_00_A_H", "ANV2_Survivor_All_Backpack_00_A_N", "ANV2_Survivor_All_Backpack_01_A_H", "ANV2_Survivor_All_Backpack_01_A_N", "ANV2_Survivor_All_Backpack_02_A_N" } },
         { "HumanChest", new[] { "ANV2_Survivor_All_Armor_00_A_L", "ANV2_Survivor_All_Armor_00_A_N", "ANV2_Survivor_All_Armor_01_A_L", "ANV2_Survivor_All_Armor_02_A_L" } },
+        // TODO: Add Zombie 02, 03 and 04 and make them conditional
         { "ZombieEyes", new[] { "Eye_Zombie_01" } },
         { "ZombieFace", new[] { "Face_Zombie_01" } },
         { "ZombieHair", new[] { "Hair_Zombie_01" } },

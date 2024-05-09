@@ -1,7 +1,7 @@
 ﻿using System.Numerics;
 using BattleBitApi.Api;
 using BattleBitApi.Data;
-using BattleBitApi.Data.ExclusionZones;
+using BattleBitApi.Enums;
 using BattleBitApi.Helpers;
 
 namespace BattleBitApi.Events;
@@ -12,13 +12,18 @@ public class ExclusionZoneHandler : Event
     {
         Task.Run(async () =>
         {
-            while (true)
+            while (Server.IsConnected)
             {
-                foreach (var player in Server.AllPlayers.Where(player => player.PlayerTeamRole == PlayerTeamRoles.Human && player.IsAlive && player.Position != Vector3.Zero))
+                if (Server.ServerZombieGameState != ZombieGameState.HumanPreparation)
                 {
-                    if (ZoneHelper.GetIsPlayerInExclusionZone(ExclusionZoneList.GetMapSpawnExclusionZone(Server.Map), player))
+                    foreach (var player in Server.AllPlayers.Where(player => player.PlayerTeamRole == PlayerTeamRoles.Human && player.IsAlive && player.Position != Vector3.Zero))
                     {
-                        player.Message("You are in the exclusion zone! Please move back to the map!", 1);
+                        if (ZoneHelper.GetIsPlayerInExclusionZone(ExclusionZoneList.GetMapSpawnExclusionZone(Server.Map), player))
+                        {
+                            // TODO: Remove in prod
+                            Server.UILogOnServer($"Player {player.Name} is in the exclusion zone!", 5);
+                            // TODO: Spawn task to kill player after X amount of time, make message prettier.
+                        }
                     }
                 }
 

@@ -1,5 +1,6 @@
 ﻿using BattleBitAPI.Common;
 using BattleBitApi.Data;
+using BattleBitApi.Enums;
 using BattleBitApi.Events;
 using BattleBitApi.Helpers;
 using BattleBitAPI.Server;
@@ -23,6 +24,8 @@ public class BattleBitServer : GameServer<BattleBitPlayer>
         AddEvent(new PlayerWearings(), this);
         AddEvent(new ExclusionZoneHandler(), this);
     }
+
+    public ZombieGameState ServerZombieGameState;
 
     private void AddEvent(Event @event, BattleBitServer server)
     {

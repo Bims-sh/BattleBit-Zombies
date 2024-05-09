@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using BattleBitApi.Api;
+using BattleBitApi.Enums;
 
 namespace BattleBitApi.Helpers;
 
@@ -19,6 +20,7 @@ public class DebugHelper
                 message.AppendLine($"Health: {player.HP}");
                 message.AppendLine($"PlayerTeamRole: {player.PlayerTeamRole}");
                 message.AppendLine($"Map: {server.Map}");
+                message.AppendLine($"ZombieGameState: {server.ServerZombieGameState}");
                 message.AppendLine($"PlayerCount: {server.AllPlayers.Count()}");
 
                 player.Message(message.ToString());
