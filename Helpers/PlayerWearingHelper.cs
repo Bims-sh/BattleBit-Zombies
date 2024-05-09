@@ -23,7 +23,7 @@ public class PlayerWearingHelper
     
     public static PlayerWearings GetUpdatedWearings(Team playerTeam, PlayerWearings currentWearings)
     {
-        var updatedWearings = new PlayerWearings();
+        var updatedWearings = currentWearings;
         var playerRole = playerTeam == Team.TeamA ? "Human" : "Zombie";
 
         if (playerRole == "Human")
