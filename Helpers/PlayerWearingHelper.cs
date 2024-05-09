@@ -28,10 +28,10 @@ public class PlayerWearingHelper
 
         if (playerRole == "Human")
         {
-            updatedWearings.Uniform = GetRandomWearing(playerRole, "Uniform");
-            updatedWearings.Head = GetRandomWearing(playerRole, "Head");
-            updatedWearings.Backbag = GetRandomWearing(playerRole, "Backpack");
-            updatedWearings.Chest = GetRandomWearing(playerRole, "Armor");
+            updatedWearings.Uniform = WearingDictionary["HumanUniform"][new Random().Next(0, WearingDictionary["HumanUniform"].Length)];
+            updatedWearings.Head = WearingDictionary["HumanHead"][new Random().Next(0, WearingDictionary["HumanHead"].Length)];
+            updatedWearings.Backbag = WearingDictionary["HumanBackpack"][new Random().Next(0, WearingDictionary["HumanBackpack"].Length)];
+            updatedWearings.Chest = WearingDictionary["HumanChest"][new Random().Next(0, WearingDictionary["HumanChest"].Length)];
         }
         else
         {
@@ -47,13 +47,5 @@ public class PlayerWearingHelper
         }
         
         return updatedWearings;
-    }
-    
-    private static string GetRandomWearing(string playerRole, string wearingType)
-    {
-        var wearings = WearingDictionary[$"{playerRole}{wearingType}"];
-        var randomIndex = new Random().Next(0, wearings.Length);
-        
-        return wearings[randomIndex];
     }
 }
